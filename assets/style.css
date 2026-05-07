@@ -1,0 +1,28 @@
+h1 {
+    color: #ffffff;
+    background: #bb00bb;
+    font-family: "Railway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+    background: #bb00bb;
+    font-family: "Railway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+}
+
+body {
+    color: #eeeeee;
+    background: #bb00bb;
+    font-family: "Railway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
