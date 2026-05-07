@@ -3,19 +3,23 @@ h1 {
     background: #bb00bb;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 900;
     font-style: normal;
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%
 }
 
 h2 {
+    padding-top: 0%;
     color: #ffffff;
     background: #bb00bb;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 600;
     font-style: normal;
     text-align: center;
+    margin-top: -2%;
 }
 
 body {
@@ -23,6 +27,26 @@ body {
     background: #bb00bb;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+nav {
+    align: center;
+    color: #ffffff;
+    background: #123456;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+span {
+    padding-left: 10%;
+    padding-right: 10%;
 }
