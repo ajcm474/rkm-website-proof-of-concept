@@ -25,9 +25,16 @@ for (const file of fs.readdirSync(contentDir)) {
 
     const htmlContent = marked(markdown);
 
+    const version = Date.now();
+
     const finalHtml = layout
-        .replace("{{ content }}", htmlContent)
-        .replace("{{ title }}", `<title>${name}</title>`);
+      .replace("{{ content }}", htmlContent)
+      .replace("{{ title }}", `<title>${name}</title>`)
+      // force CSS reload after each deploy to combat browser caching
+      .replace(
+        "/assets/style.css",
+        `/assets/style.css?v=${version}`
+      );
 
     fs.writeFileSync(
         path.join(distDir, `${name}.html`),
