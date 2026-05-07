@@ -34,3 +34,8 @@ for (const file of fs.readdirSync(contentDir)) {
         finalHtml
     );
 }
+
+fs.copyFileSync(
+    "src/index.html",
+    "dist/index.html"
+);
