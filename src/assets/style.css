@@ -1,10 +1,8 @@
 h1 {
     color: #ffffff;
     background: #bb00bb;
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 900;
-    font-style: normal;
+    font-size: 40;
     text-align: center;
     margin-top: 5%;
     margin-bottom: 5%
@@ -14,10 +12,7 @@ h2 {
     padding-top: 0%;
     color: #ffffff;
     background: #bb00bb;
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
     text-align: center;
     margin-top: -2%;
 }
@@ -34,14 +29,12 @@ body {
 }
 
 nav {
-    align: center;
-    color: #ffffff;
-    background: #123456;
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
     text-align: center;
+    color: #bb00bb;
+    background: #eeeeee;
+    font-weight: 400;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 2%;
     padding-bottom: 2%;
 }
