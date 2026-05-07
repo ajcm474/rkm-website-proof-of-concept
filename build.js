@@ -16,6 +16,8 @@ const layout = fs.readFileSync(layoutPath, "utf8");
 for (const file of fs.readdirSync(contentDir)) {
     if (!file.endsWith(".md")) continue;
 
+    const name = path.basename(file, ".md");
+
     const markdown = fs.readFileSync(
         path.join(contentDir, file),
         "utf8"
@@ -23,26 +25,12 @@ for (const file of fs.readdirSync(contentDir)) {
 
     const htmlContent = marked(markdown);
 
-    const finalHtml = layout.replace(
-        "{{ content }}",
-        htmlContent
-    ).replace(
-        "{{ title }}",
-        "<title>${name}</title>"
-    );
-
-    const name = path.basename(file, ".md");
-
-//    const outDir = path.join(distDir, name);
-//    fs.mkdirSync(outDir, { recursive: true });
+    const finalHtml = layout
+        .replace("{{ content }}", htmlContent)
+        .replace("{{ title }}", `<title>${name}</title>`);
 
     fs.writeFileSync(
-        path.join(distDir, "${name}.html"),
+        path.join(distDir, `${name}.html`),
         finalHtml
     );
 }
-
-fs.copyFileSync(
-    "src/index.html",
-    "dist/index.html"
-);
