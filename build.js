@@ -11,6 +11,27 @@ fs.mkdirSync(distDir, { recursive: true });
 
 fs.cpSync("src/assets", "dist/assets", { recursive: true });
 
+function replaceYouTubeLinks(markdown) {
+    const youtubeRegex =
+        /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/g;
+
+    return markdown.replace(youtubeRegex, (match, videoId) => {
+        return `
+<div class="youtube-embed">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/${videoId}"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+`;
+    });
+}
+
 const layout = fs.readFileSync(layoutPath, "utf8");
 
 for (const file of fs.readdirSync(contentDir)) {
@@ -18,10 +39,12 @@ for (const file of fs.readdirSync(contentDir)) {
 
     const name = path.basename(file, ".md");
 
-    const markdown = fs.readFileSync(
+    let markdown = fs.readFileSync(
         path.join(contentDir, file),
         "utf8"
     );
+
+    markdown = replaceYouTubeLinks(markdown);
 
     const htmlContent = marked(markdown);
 
